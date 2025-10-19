@@ -1,6 +1,6 @@
 # Scriptism – Simple
 
-A tiny command-line .... app that ...., shows a four-item menu, and records their order.
+40+ bite-sized, zero-dependency utility functions in Python and browsed in the terminal.
 
 ## How to run
 
