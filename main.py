@@ -384,4 +384,8 @@ b = {'y': 3, 'z': 4}
 print(merge_dictionaries(a, b))   # {'x': 1, 'y': 3, 'z': 4}
 
 
+def first_n_vowels(string, n):
+    v = [c for c in string if c.lower() in 'aeiou'][:n]
+    return v if v else "Not found"
+print(first_n_vowels("I have a car in the garage", 5))
 
