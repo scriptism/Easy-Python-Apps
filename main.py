@@ -316,8 +316,6 @@ def key_exists(dict1, key):
 print(key_exists({'a': 1, 'b': 2}, 'a'))
 
 
-
-
 # ----check if a number is both a perfect square and a perfect cube
 def is_cubic_square(n: int) -> bool:
     if n < 0:                 
