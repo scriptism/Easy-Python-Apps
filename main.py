@@ -340,7 +340,48 @@ def sum_of_digits(n):
 print(sum_of_digits(9102821))
 
 
+# or
+def sum_of_digits_2(n):
+    return sum(int(d) for d in str(abs(n)))
+print(sum_of_digits_2(21345))
+# print(sum_of_digits_2("33"))???
 
+
+# -----calculate hypotenuse
+import math
+def calculate_hypotenuse(a, b):
+    return math.hypot(a, b)
+
+print(round(calculate_hypotenuse(4, 7), 3))
+
+# -----count paramters
+def count_parameters(*args, **kwargs):
+    return len(args) + len(kwargs)
+
+print(count_parameters("A", "B", "C", "D", 12)) 
+
+
+# -----second largest
+def second_largest(numbers):
+    uniq = sorted(set(numbers), reverse=True)
+    return uniq[1] if len(uniq) > 1 else None
+print(second_largest([3, 5, 8, 12, 11]))
+
+
+# -----the first -last index
+def first_last_index(lst, n):
+    return (lst.index(n), len(lst) - 1 - lst[::-1].index(n)) if n in lst else (None, None)
+
+print(first_last_index([3, 7, 2, 12, 77, 4, 2, 33, 12, 33], 2))
+
+
+def merge_dictionaries(dict1, dict2):
+    return dict1 | dict2
+
+# example call
+a = {'x': 1, 'y': 2}
+b = {'y': 3, 'z': 4}
+print(merge_dictionaries(a, b))   # {'x': 1, 'y': 3, 'z': 4}
 
 
 
