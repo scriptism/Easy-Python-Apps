@@ -389,3 +389,20 @@ def first_n_vowels(string, n):
     return v if v else "Not found"
 print(first_n_vowels("I have a car in the garage", 5))
 
+
+# ????
+
+def sum_of_elements(numbers):
+    return sum(numbers)
+
+def multiply_by_two(numbers):
+    return [n * 2 for n in numbers]
+
+def get_union_sum(set1, set2):
+    return sum(set1 | set2)
+
+def second_largest(numbers):
+    uniq = sorted(set(numbers), reverse=True)
+    return uniq[1] if len(uniq) > 1 else None
+
+
