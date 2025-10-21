@@ -328,3 +328,6 @@ print(is_cubic_square(50))
 print(is_cubic_square(64))  
 print(is_cubic_square(729))  
 
+
+
+
