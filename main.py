@@ -329,5 +329,18 @@ print(is_cubic_square(64))
 print(is_cubic_square(729))  
 
 
+# -----sum of digits
+def sum_of_digits(n):
+    n = abs(n)
+    total = 0
+    while n:
+        total += n % 10
+        n //= 10
+    return total
+print(sum_of_digits(9102821))
+
+
+
+
 
 
