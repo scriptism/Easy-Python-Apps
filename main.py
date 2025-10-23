@@ -282,3 +282,142 @@ def second_largest(numbers):
 print(second_largest([3, 8, 99, 12, 21]))
 
 
+# ---------Less Easy--------
+
+# -----sum of digits
+def sum_of_digits(n):
+    n = abs(n)
+    total = 0
+    while n:
+        total += n % 10
+        n //= 10
+    return total
+print(sum_of_digits(9102821))
+
+# or
+def sum_of_digits_2(n):
+    return sum(int(d) for d in str(abs(n)))
+print(sum_of_digits_2(21345))
+# print(sum_of_digits_2("33"))???
+
+
+
+# ----check if a number is both a perfect square and a perfect cube
+def is_cubic_square(n):
+    if n < 0:
+        return False  
+    root = round(n ** (1 / 6))  # sixth-root gives integer if n is both square & cube
+    return root ** 6 == n
+
+print(is_cubic_square(64))   # True  (8² and 4³)
+print(is_cubic_square(729))  # True  (27² and 9³)
+print(is_cubic_square(50))   # False
+
+
+# ----check if a number is both a perfect square and a perfect cube
+def is_cubic_square(n: int) -> bool:
+    if n < 0:                 
+        return False
+    root = round(n ** (1/6))
+    # round-trip test to avoid fp rounding error
+    return root ** 6 == n
+
+print(is_cubic_square(50))   
+print(is_cubic_square(64))  
+print(is_cubic_square(729))  
+
+# ----check if a letter is in a string
+def check_letter(string, letter):
+    if string.find(letter) != -1:
+        return True
+    else:
+        return False
+print(check_letter("hello", "e"))
+print(check_letter("world", "a"))
+
+
+# ----find the largest number in a list
+def find_largest(numbers):
+    largest = numbers[0]
+    for number in numbers:
+        if number > largest:
+            largest = number
+    return largest
+print(find_largest([3, 5, 2, 8, 1]))
+
+# ----sum all items in a list
+def add_items(numbers):
+    total = 0
+    for n in numbers:
+        total += n
+    return total
+print(add_items([1, 2, 3, 4, 5]))
+
+
+# ----convert number to reversed list of digits
+def number_to_reversed_list(n):
+     return [int(d) for d in str(abs(n))[::-1]]
+print(number_to_reversed_list(12345))
+
+# ----get day of the week from number
+def day_of_week(n):
+    days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    return days[n - 1] if 1 <= n <= 7 else "Invalid"
+print(day_of_week(3))
+
+# ----remove vowels from a string
+def remove_vowels(string):
+    vowels = set("aeiouAEIOU")
+    return ''.join(ch for ch in string if ch not in vowels)
+print(remove_vowels("Hello World"))  # Hll Wrld
+
+
+# ---copy specific elements from a tuple based on given indices
+def copy_elements(original_tuple, indices):
+    return tuple(original_tuple[i] for i in indices)
+print(copy_elements((10, 20, 30, 40, 50), [0, 2, 4])) 
+
+
+# ----find the most common character in a string
+def most_common_character(s):
+    from collections import Counter
+    if not s:
+        return None
+    counter = Counter(s)
+    most_common = counter.most_common(1)[0][0]
+    return most_common
+print(most_common_character("hello world"))
+
+# -----count paramters
+def count_parameters(*args, **kwargs):
+    return len(args) + len(kwargs)
+
+print(count_parameters("A", "B", "C", "D", 12)) 
+
+# or
+def count_parameters_2(*args, **kwargs):
+    return len(args) + len(kwargs)
+
+print(count_parameters_2("A", "B", "C", "D", 12, x=99, y=42, mode="fast"))
+
+
+# -----second largest
+def second_largest(numbers):
+    uniq = sorted(set(numbers), reverse=True)
+    return uniq[1] if len(uniq) > 1 else None
+print(second_largest([3, 5, 8, 12, 11]))
+
+
+# -----the first -last index
+def first_last_index(lst, n):
+    return (lst.index(n), len(lst) - 1 - lst[::-1].index(n)) if n in lst else (None, None)
+
+print(first_last_index([3, 7, 2, 12, 77, 4, 2, 33, 12, 33], 2))
+
+# return first n vowels
+def first_n_vowels(string, n):
+    v = [c for c in string if c.lower() in 'aeiou'][:n]
+    return v if v else "Not found"
+print(first_n_vowels("I have a car in the garage", 5))
+
+
