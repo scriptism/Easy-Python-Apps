@@ -282,7 +282,80 @@ def second_largest(numbers):
 print(second_largest([3, 8, 99, 12, 21]))
 
 
+# return True if the list is sorted
+def is_sorted(numbers):
+    return numbers == sorted(numbers)
+print(is_sorted([1, 2, 3, 4]))
+print(is_sorted([1, 3, 6, 4]))
+
+# ------count the arguments
+def count_arguments(*args):
+    return len(args)
+
+print(count_arguments())
+print(count_arguments(35, 14))
+
+
+# create 5 sublists
+def create_sublists(n):
+    my_list = [n]
+    return [my_list] * 5
+print(create_sublists("*"))
+print(create_sublists(9))
+
+
+# check datatype of input
+def check_datatype(input):
+    return type(input)
+print(check_datatype(""))
+print(check_datatype(1))
+
+
+# number of trips:
+def number_of_trips(seats):
+    return 12 // seats
+print(number_of_trips(3))
+
+
+
+def identical_items(set1, set2):
+    return set1 & set2
+
+print(identical_items({1, 2, 3}, {2, 3, 4}))
+
+
+def reverse_number(n):
+    return float(str(n)[::-1])
+
+print(reverse_number(123.45))
+print(reverse_number(12.71))
+
+# check if the letters are in order
+def is_in_order(s):
+    return list(s) == sorted(s)
+
+print(is_in_order("abc"))
+print(is_in_order("book"))
+
+
 # ---------Less Easy--------
+
+
+# find the first letter, that occurs once
+def single_occurrence(s):
+    s = s.lower()
+    for ch in s:
+        if s.count(ch) == 1:
+            return ch
+
+print(single_occurrence("Hey guys, stay here"))
+
+
+# find the largest swap
+def largest_swap(num):
+    return max(num, int(str(num)[::-1]))
+
+print(largest_swap(27))
 
 # -----sum of digits
 def sum_of_digits(n):
