@@ -338,8 +338,65 @@ print(is_in_order("abc"))
 print(is_in_order("book"))
 
 
+# calculate nth trianular number
+def triangular_number(n):
+    return n * (n + 1) // 2
+
+print(triangular_number(5))
+
+# or
+def triangular_number_2(n):
+    return sum(range(1, n + 1))
+
+print(triangular_number_2(5))
+
+# evaluate expresion as string
+def evaluate_expression(expression):
+    return eval(expression)
+
+print(evaluate_expression("3 + 5 * 2"))
+print(evaluate_expression("2 + 3 * 4 - 5"))
+
+
+# ternary
+def check_even_odd(n):
+    return "Even" if n % 2 == 0 else "Odd"
+
+print(check_even_odd(7))
+
+# return Up or down 
+def up_down(n):
+    return "Up" if n > 0 else "Down" if n < 0 else "Zero"
+
+print(up_down(2))
+print(up_down(0))
+print(up_down(-21))
+
+
+# reverse a number
+def reverse_number(n):
+    return int(str(n)[::-1])
+print(reverse_number(3245))
+
+
 # ---------Less Easy--------
 
+
+# how many tallest candles
+def tallest_candles(candles):
+    return candles.count(max(candles))
+
+print(tallest_candles([2, 4, 1, 3, 4]))
+print(tallest_candles([2, 41, 1, 41, 3, 41]))
+
+
+
+# return max from 2 numbers, either + or *
+def max_value(s):
+    a, b = map(int, s.split())
+    return max(a + b, a * b)
+
+print(max_value('3 4'))
 
 # find the first letter, that occurs once
 def single_occurrence(s):
@@ -349,6 +406,28 @@ def single_occurrence(s):
             return ch
 
 print(single_occurrence("Hey guys, stay here"))
+
+
+def replace_item(lst, old_item, new_item):
+    return [new_item if x == old_item else x for x in lst]
+
+print(replace_item([1, 2, 3, 2], 2, 9))
+print(replace_item(["apples", "kiwi", "oranges"], "kiwi", "watermelon"))
+
+
+# two identical letters
+def has_consecutive_letters(s):
+    return any(s[i] == s[i+1] for i in range(len(s)-1))
+
+print(has_consecutive_letters("hello"))
+
+
+# return the shortest word
+def shortest_word(sentence):
+    return min(sentence.split(), key=len)
+# or max
+
+print(shortest_word("The quick brown fox"))
 
 
 # find the largest swap
