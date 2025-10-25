@@ -95,7 +95,7 @@ pin_extractor(poems)               # list of numeric codes per poem
 License
 Public domain – do whatever you want.
 
-
+How to run:
 ```bash
 python main.py
 ```
