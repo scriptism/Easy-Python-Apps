@@ -378,6 +378,25 @@ def reverse_number(n):
     return int(str(n)[::-1])
 print(reverse_number(3245))
 
+# print the largest from each list
+def find_largest(lists):
+    return [max(lst) for lst in lists]
+
+print(find_largest([[1, 3, 1, 4], [3, 1, 5], [1, 7, 2, 9]]))
+print(find_largest([[1, 3, 6, 4], [3, 1, 5], [1, 17, 2, 9]]))
+
+# print the smallest from each list
+def find_smallest(lists):
+        return [min(lst) for lst in lists]
+print(find_smallest([[1, 3, 1, 4], [3, 1, 5], [0, 7, 2, 9]]))
+
+# count occurances in a tuple
+def count_occurrences(item, tup):
+    return tup.count(item)
+
+print(count_occurrences(2, (1, 2, 3, 2, 4)))
+print(count_occurrences("tea", ("tea", "tea", "coffee", "tea", "cola")))
+
 
 # ---------Less Easy--------
 
