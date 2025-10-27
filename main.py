@@ -404,9 +404,75 @@ def symmetric_difference(set1, set2):
 
 print(symmetric_difference({1, 2, 3}, {2, 3, 4}))
 
+#  Is it full house?
+def is_full_house(hand):
+    return sorted(map(hand.count, hand)) == [2, 2, 3, 3, 3]
+
+print(is_full_house(['K', 'K', 'Q', 'Q', 'Q']))
+
+# match last item
+def match_last_item(lst):
+    return ''.join(map(str, lst[:-1])) == str(lst[-1])
+
+print(match_last_item(['abc', 'de', 'abcde']))
+
+# convert to dictionary
+def numbers_to_dict(numbers):
+    return {str(n): n * n for n in numbers}
+
+print(numbers_to_dict([1, 2, 3]))
+
+
+# add costs
+def memorial_cost(prices):
+    return sum(map(float, prices.split()))
+print(memorial_cost("12.5 8.75 3.2"))
+
+# count digits in a number
+def count_digits(n):
+    return len(str(abs(n)))
+print(count_digits(-90210))
+
+def list_union_intersection(list1, list2):
+    s1, s2 = set(list1), set(list2)
+    return list(s1 | s2), list(s1 & s2)
+
+print(list_union_intersection([1, 2, 3], [2, 3, 4]))
 
 # ---------Less Easy--------
 
+
+# separate the vowels and consonants
+def split_string(s):
+    vowels = ''.join(ch for ch in s if ch.lower() in 'aeiou')
+    consonants = ''.join(ch for ch in s if ch.isalpha() and ch.lower() not in 'aeiou')
+    return [vowels, consonants]
+
+print(split_string("HelloWorld"))
+
+# create stutter effect
+def stutter(word):
+    return f"{word[:2]}... {word[:2]}... {word}?"
+
+print(stutter("incredible"))
+
+
+# find first positive number
+def find_missing_number(numbers):
+    n = 1
+    while n in numbers:
+        n += 1
+    return n
+print(find_missing_number([3, 4, -1, 1]))
+
+# return the products of all
+def product_of_list(numbers):
+    result = 1
+    for x in numbers:
+        result *= x
+    return result
+
+print(product_of_list([2, 3, 4]))
 
 # how many tallest candles
 def tallest_candles(candles):
@@ -416,6 +482,61 @@ print(tallest_candles([2, 4, 1, 3, 4]))
 print(tallest_candles([2, 41, 1, 41, 3, 41]))
 
 
+
+# change characters
+def double_character_swap(text, char1, char2):
+    return text.translate(str.maketrans({char1: char2, char2: char1}))
+print(double_character_swap("apples and bananas", "a", "e"))
+
+# return odd or even 
+def sum_of_letters(string):
+    return 'Odd' if sum(ord(ch) for ch in string) % 2 else 'Even'
+print(sum_of_letters("ABC"))
+
+
+# remove special characters
+def remove_special_chars(s):
+    cleaned = ''
+    for ch in s:
+        if 'A' <= ch <= 'Z' or 'a' <= ch <= 'z' or '0' <= ch <= '9':
+            cleaned += ch
+    return cleaned
+
+print(remove_special_chars("Py#th@on 3.12!"))
+print(remove_special_chars("$S@@a!l*l@am"))
+
+# find the missing number and the repeated
+def find_mismatch(nums):
+    n = len(nums)
+    duplicate = sum(nums) - sum(set(nums))
+    missing = (n * (n + 1) // 2) - sum(set(nums))
+    return [duplicate, missing]
+
+print(find_mismatch([1, 2, 2, 4]))
+
+# XOR on elements
+from functools import reduce
+import operator
+
+def list_xor(numbers):
+    return reduce(operator.xor, numbers, 0)
+
+print(list_xor([3, 5, 7]))  # 1
+
+# or
+def list_xor(numbers):
+    result = 0
+    for n in numbers:
+        result ^= n
+    return result
+
+print(list_xor([3, 5, 7]))
+
+# longest zeros in binary number
+def longest_zero_sequence(binary_string):
+    return max(map(len, binary_string.split('1')))
+
+print(longest_zero_sequence("10001000100"))  # 3
 
 # return max from 2 numbers, either + or *
 def max_value(s):
