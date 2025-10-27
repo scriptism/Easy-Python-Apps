@@ -398,6 +398,13 @@ print(count_occurrences(2, (1, 2, 3, 2, 4)))
 print(count_occurrences("tea", ("tea", "tea", "coffee", "tea", "cola")))
 
 
+# find symmetric difference
+def symmetric_difference(set1, set2):
+    return set1 ^ set2
+
+print(symmetric_difference({1, 2, 3}, {2, 3, 4}))
+
+
 # ---------Less Easy--------
 
 
@@ -591,4 +598,13 @@ def first_n_vowels(string, n):
     return v if v else "Not found"
 print(first_n_vowels("I have a car in the garage", 5))
 
+# return sum of min values from each list
+def sum_of_min_values(lst):
+    return sum(map(min, lst))
+print(sum_of_min_values([[1, 3, 1, 4], [3, 8, 5], [1, 7, 2, 9]]))
 
+# return sum of digits between two numbers
+def sum_of_digits(start, end):
+    return sum(int(d) for n in range(start, end + 1) for d in str(n))
+print(sum_of_digits(10, 15))
+print(sum_of_digits(10, 16))
