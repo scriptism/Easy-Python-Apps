@@ -460,7 +460,57 @@ def free_throw_probability(successes, attempts):
     return successes / attempts
 print(free_throw_probability(75, 100))  
 
+
+# Ternary
+def switch_pencil(pencil1, pencil2):
+    return "Pencil 2" if pencil2 > pencil1 else "Pencil 1"
+print(switch_pencil(2, 6)) 
+
+# Generate a list with squares
+def generate_squares(n):
+    return [i*i for i in range(1, n+1)]
+print(generate_squares(5))
+
+# print user info
+def get_user_info(name, age, address):
+    return f"Name: {name}\n\nAge: {age}\n\nAddress: {address}"
+print(get_user_info("John Doe", 25, "New York"))
+
+
 # ---------Less Easy--------
+
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+print(is_prime(7))
+
+
+# return true if the number is both a cube and square
+def is_cubic_square(n):
+    if n < 0:
+        return False
+    root = round(n ** (1/6))
+    return root ** 6 == n
+
+print(is_cubic_square(64))   # True
+print(is_cubic_square(729))  # True
+print(is_cubic_square(50))   # False
+
+
+# return true if equation is correct
+def find_true_equations(equations):
+    return [eq for eq in equations if eval(eq.replace('=', '=='))]
+print(find_true_equations(['2+4/2 = 4', '3*3 = 10', '8-4 = 4']))
+
+
+# remove special characters
+def remove_special_chars(s):
+    return ''.join(ch for ch in s if ch.isalnum() or ch == ' ')
+print(remove_special_chars("Hello@# World!!*."))
 
 
 # separate the vowels and consonants
