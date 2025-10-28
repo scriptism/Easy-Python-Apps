@@ -439,6 +439,27 @@ def list_union_intersection(list1, list2):
 
 print(list_union_intersection([1, 2, 3], [2, 3, 4]))
 
+# return sum of odds
+def sum_of_odds(numbers):
+    return sum(x for x in numbers if x % 2)
+# x % 2 gives 1 for odd numbers and 0 for even numbers.
+print(sum_of_odds([1, 2, 3, 4, 5]))
+
+# return sum of evens
+def sum_of_evens(numbers):
+    return sum(x for x in numbers if x % 2 == 0)
+print(sum_of_evens([1, 2, 3, 4, 5]))  # 6
+
+# find the difference in percentage
+def percentage_change(old_number, new_number):
+    return ((new_number - old_number) / old_number) * 100
+print(percentage_change(50, 75))
+
+# throw probability
+def free_throw_probability(successes, attempts):
+    return successes / attempts
+print(free_throw_probability(75, 100))  
+
 # ---------Less Easy--------
 
 
@@ -481,7 +502,11 @@ def tallest_candles(candles):
 print(tallest_candles([2, 4, 1, 3, 4]))
 print(tallest_candles([2, 41, 1, 41, 3, 41]))
 
-
+# return true if difference between each is 2
+def two_is_difference(numbers):
+    return all(abs(a - b) == 2 for a, b in zip(numbers, numbers[1:]))
+print(two_is_difference([2, 4, 6, 8]))  
+print(two_is_difference([2, 3, 5, 7]))   
 
 # change characters
 def double_character_swap(text, char1, char2):
