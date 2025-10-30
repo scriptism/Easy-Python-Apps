@@ -476,6 +476,10 @@ def get_user_info(name, age, address):
     return f"Name: {name}\n\nAge: {age}\n\nAddress: {address}"
 print(get_user_info("John Doe", 25, "New York"))
 
+# return the last digit
+def end_letters(numbers):
+    return [str(n)[-1] for n in numbers]
+print(end_letters([12, 31, 893])) 
 
 # ---------Less Easy--------
 
@@ -527,6 +531,86 @@ def stutter(word):
 
 print(stutter("incredible"))
 
+
+# check if a number is palindrome
+def is_palindrome(n):
+    return str(n) == str(n)[::-1]
+print(is_palindrome(121))
+print(is_palindrome(123))
+
+# another way
+def is_palindrome_2(n):
+    return str(n) == str(n)[::-1]
+for t in [0, 7, 121, 123, 1221, 12321, -121, 10, -12321]:
+    print(t, is_palindrome_2(t))
+
+# filter a dictionary
+def filter_by_star_rating(hotels, min_stars):
+    return [h for h in hotels if h.get('stars', 0) >= min_stars]
+
+hotels = [
+    {'name': 'Grand Plaza', 'stars': 5},
+    {'name': 'Budget Inn',  'stars': 2},
+    {'name': 'Midtown',     'stars': 3}
+]
+print(filter_by_star_rating(hotels, 5))
+
+# return the first non-repeated
+def first_nonrepeated(s):
+    counts = {}
+    for ch in s:
+        counts[ch] = counts.get(ch, 0) + 1
+    for ch in s:
+        if counts[ch] == 1:
+            return ch
+    return None
+print(first_nonrepeated("swiss"))
+
+# see if the number is sastry
+import math
+def is_sastry(n):
+    c = int(str(n) + str(n + 1))
+    return math.isqrt(c) ** 2 == c
+
+# corresponding ASCII value
+def map_letters(string):
+    return {ch: ord(ch) for ch in string}
+
+# return Pass or Fail
+def check_result(marks):
+    if not 0 <= marks <= 100:
+        return "Invalid"
+    return "Pass" if marks >= 40 else "Fail"
+
+for m in (-5, 39, 40, 100, 101):
+    print(m, check_result(m))
+
+# return fibonacci less than n
+def fibonacci_less_than(n):
+    a, b = 0, 1
+    seq = []
+    while a < n:
+        seq.append(a)
+        a, b = b, a + b
+    return seq
+print(fibonacci_less_than(20))
+ 
+
+# check if the number is same parity
+def same_parity(numbers):
+    if not numbers:          # empty list guard
+        return []
+    first_parity = numbers[0] % 2
+    return [n for n in numbers if n % 2 == first_parity]
+
+print(same_parity([3, 8, 5, 2, 7]))  
+
+# check subset
+def is_subset(list1, list2):
+    return set(list1).issubset(list2)
+
+print(is_subset([1, 2], [3, 2, 1, 4]))  
+print(is_subset([1, 5], [3, 2, 1, 4]))  
 
 # find first positive number
 def find_missing_number(numbers):
