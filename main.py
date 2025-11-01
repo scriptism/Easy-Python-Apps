@@ -481,7 +481,114 @@ def end_letters(numbers):
     return [str(n)[-1] for n in numbers]
 print(end_letters([12, 31, 893])) 
 
-# ---------Less Easy--------
+
+
+# find intersection of two sets
+def lst_intersection(nums1, nums2):
+    return list(set(nums1) & set(nums2))
+print(lst_intersection([1, 2, 3, 3], [3, 4, 5]))  # [3]
+
+# convert string to number
+def convert_to_number(str_num):
+    return int(str_num)
+print(convert_to_number("1234"))
+
+
+# count letters
+def count_letters(word):
+    return {ch: word.count(ch) for ch in word}
+
+print(count_letters("hello"))
+
+# greeting according to country
+def greet(country):
+    if country == "USA":
+        return "Hello"
+    elif country == "France":
+        return "Bonjour"
+    elif country == "Spain":
+        return "Hola"
+    elif country == "Germany":
+        return "Hallo"
+    elif country == "Italy":
+        return "Ciao"
+    else:
+        return "I don't know the country"
+print(greet("Germany"))
+
+# return true if num 3 is greater
+def greater_than_sum(numbers):
+    return numbers[2] > numbers[0] + numbers[1]
+print(greater_than_sum([3, 4, 8]))  # True
+print(greater_than_sum([5, 5, 9]))  # False
+
+
+
+# reverse a list of numbers
+def reverse_list(lst):
+    return lst[::-1]
+print(reverse_list([1, 2, 3, 4])) 
+
+
+# Calculate Fermat number
+def fermat_number(n):
+    return 2 ** (2 ** n) + 1
+print(fermat_number(3)) 
+
+# union of sets
+def get_union(set1, set2):
+    return set1 | set2
+print(get_union({1, 2, 3}, {3, 4, 5})) 
+
+
+
+# --------------------Less Easy-------------------------
+
+
+# sum of all evens in a matrix
+def sum_of_evens(matrix):
+    return sum(n for row in matrix for n in row if n % 2 == 0)
+m = [[1, 2, 3],
+     [4, 5, 6]]
+print(sum_of_evens(m)) 
+
+# return true or false
+def is_prime(n):
+    return n > 1 and all(n % i for i in range(2, int(n**0.5) + 1))
+print(is_prime(7))
+
+# create two lists from a dictionary
+def dict_to_lists(d):
+    return list(d.keys()), list(d.values())
+print(dict_to_lists({'a': 1, 'b': 2}))  # (['a', 'b'], [1, 2])
+
+
+# calculate the distance
+import math
+def calculate_distance(point1, point2):
+    return math.dist(point1, point2)          # Python 3.8+
+print(calculate_distance((1, 2), (4, 6)))     # 5.0
+
+# find total time
+def total_washing_time(times_per_day, months):
+    total = months * 30 * times_per_day * 21
+    return f'{total // 3600} and {total % 3600} seconds'
+print(total_washing_time(4, 2))  
+
+# retrieve last elements
+def retrieve_last_elements(lst, n):
+    return lst[-n:] if n <= len(lst) else lst
+print(retrieve_last_elements([1, 2, 3, 4, 5], 2))  
+
+
+# multiply digits
+def multiply_digits(n):
+    product = 1
+    for d in str(abs(n)):
+        product *= int(d)
+    return product
+print(multiply_digits(1234))  # 24
+
 
 def is_prime(n):
     if n < 2:
